@@ -26,21 +26,24 @@
         getPermission() {
             console.log(this);
             // метод getPermission принадлежит объекту user1, а значит и this === user1 внутри него
-            isAdult(this.age);
+            // isAdult(this.age);
             /* неважно, что функция isAdult вызывается внутри метода getPermission -
             все равно она принадлежит объекту Window,
             а значит this в момент ее вызова будет равен Window
              */
-            return (this.age > 18);
+            // return (this.age > 18);
         }
     };
-    user1.getPermission();
+    // user1.getPermission();
     /* метод getPermission принадлежит объекту user1,
     а значит и this в момент его вызова будет ссылаться на объект user1.
     */
     // общее правило - при вызове метода  this - это ВСЕГДА объект перед точкой
 
-    setTimeout(user1.getPermission, 1000);
+    setTimeout(user1.getPermission, 2000);
+    setTimeout(function(){
+        user1.getPermission()
+    }, 4000);
     // this внутри любой функции, переданой setTimeout будет равен Window
 
 

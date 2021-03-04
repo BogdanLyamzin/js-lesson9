@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+<!-- У вас есть массив  оценок scoreArr. 
+    Выведите в консоль минимальную и максимальную оценки. -->
+    <script>
+        /*
+        const getMinValue = (arr)=> {
+            let minValue = arr[0];
+            for(const num of arr) {
+                if(num < minValue) {
+                    minValue = num;
+                }
+            }
+            return minValue;
+        };
+        */
+       const getMinValue = (arr) => Math.min.apply(null, arr);
+       
+        /*
+        const getMaxValue = (arr)=> {
+            let maxValue = arr[0];
+            for(const num of arr) {
+                if(num > maxValue) {
+                    maxValue = num;
+                }
+            }
+            return maxValue;
+        };
+        */
+        const getMaxValue = (arr) => Math.max.apply(null, arr);
+        
+        const scoreArr = [8, 6, 7, 11, 4, 12, 9, 10];
+        const minScore = getMinValue(scoreArr);
+        console.log(minScore);
+
+        const maxScore = getMaxValue(scoreArr);
+        console.log(maxScore)
+
+
+    </script>
+</body>
+</html>

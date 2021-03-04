@@ -30,7 +30,7 @@
     const funcArgs1 = {
         name: "Андрей",
         lastName: "Первозванный"
-    }
+    };
 
     createUser.lexicalEnvironment.localScoop = funcArgs1;
 
@@ -43,8 +43,11 @@
         };
         return newUser;
      // const user1 = newUser;
-
+    
     createUser.lexicalEnvironment.localScoop = undefined;
+        if(!(some function has link to funcArgs1)) {
+            delete funcArgs1;
+        }
     */
 
 

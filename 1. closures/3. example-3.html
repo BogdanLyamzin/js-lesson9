@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    /*
+    const getUSDCurrency = function(value){
+      const USD_CURRENCY = 27.8; // получаем с помощью AJAX-Запроса
+      const valueInUSD = value / USD_CURRENCY;
+      const roundUSDValue = valueInUSD.toFixed(2);
+      return +roundUSDValue;
+    };
+    */
+    const createGetCurrency = function(currency){
+      const func = function(value) {
+        const valueInUSD = value / currency;
+        const roundUSDValue = valueInUSD.toFixed(2);
+        return +roundUSDValue;
+      };
+      return func;
+    };
+    
+    const getUSDCurrency = createGetCurrency(27.8);
+    /*
+    const getUSDCurrency = function() {
+        const valueInUSD = value / 27.8;
+        const roundUSDValue = valueInUSD.toFixed(2);
+        return +roundUSDValue;
+      };
+    */
+   console.log(getUSDCurrency(20000));
+
+   const getEuroCurrency = createGetCurrency(33.3);
+   console.log(getEuroCurrency(20000));
+  </script>
+</body>
+</html>

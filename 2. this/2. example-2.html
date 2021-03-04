@@ -37,7 +37,7 @@
             "biology": 11,
             "phisic": 8,
             "history": 12,
-            calcAvarageScore () {
+            calcAvarageScore: function () {
                 console.log(this);
                 /* метод calcAvarageScore принадлежит объекту tabel,
                 а значит и this === user1.tabel внутри него
@@ -56,7 +56,7 @@
             }
         }
     };
-    user1.getPermission();
+    // user1.getPermission();
     /* метод getPermission принадлежит объекту user1,
     а значит и this в момент его вызова будет ссылаться на объект user1.
     */

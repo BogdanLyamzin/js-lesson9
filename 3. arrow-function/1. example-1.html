@@ -10,7 +10,8 @@
     <script>
         
         /*
-        стрелочная функция не имеет своего this и поэтому заимствует this у ФУНКЦИИ,
+        стрелочная функция не имеет своего this и поэтому 
+        заимствует this у ФУНКЦИИ,
         внутри которой она БЫЛА СОЗДАНА, В МОМЕНТ СВОЕГО СОЗДАНИЯ.
         Причем делает это раз и навсегда - а значит,
         this внутри стрелочной функции ВСЕГДА будет
@@ -51,6 +52,7 @@
                 mathematic: 8,
                 history: 9,
                 calcAvarageScore() {
+                    console.log(this)
                     const calcSum = ()=> {
                         console.log(this);
                         /* функция calcSum создана внутри calcAvarageScore -
@@ -60,18 +62,14 @@
                     };
 
                     calcSum(); // this === person.tabel
-                    isAdult(); // this === Window
-                },
-                getLowerScore: () => {
-                    console.log(this); // 
                 }
             }
         };
 
-        isAdult();
-//        person.getAge(); 
-//        person.showAge();
-//        person.tabel.calcAvarageScore();
+        // isAdult();
+       person.getAge(); 
+    //    person.showAge();
+    //    person.tabel.calcAvarageScore();
 //        person.tabel.getLowerScore();
 
 

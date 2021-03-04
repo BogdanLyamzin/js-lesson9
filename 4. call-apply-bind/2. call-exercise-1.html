@@ -6,7 +6,8 @@
 </head>
 
 <body>
-<!--  Создайте функцию getAge, которая высчитывает возраст на указаную дату в формате:
+<!--  Создайте функцию getAge, 
+    которая высчитывает возраст на указаную дату в формате:
 "гг.мм.дд" и вызовите ее для каждого объекта -->
     <script>
         const user1 = {
@@ -19,11 +20,14 @@
             name: "Крогар",
             "last name": "ди'Аншвар",
             birthday: "1845.05.10"
-        }
+        };
+
         function getAge() {
 
-        }
+        };
 
+        const user1Age = getAge.call(user1);
+        const user2Age = getAge.call(user2);
 
     </script>
 </body></html>

@@ -28,7 +28,6 @@
     }
     
     createCounter.lexicalEnvironment.localScoop = funcArgs1;
-    }
 
     // создаем внутри анонимную функцию, пусть JS даст ей временное имя func1
     function func1() {
@@ -44,6 +43,9 @@
      // const firstCounter = func1;
 
     createCounter.lexicalEnvironment.localScoop = undefined;
+        if(!(some function has link to funcArgs1)) {
+            delete funcArgs1;
+        }
     */
  
     const secondCounter = createCounter(15, 5);
@@ -69,21 +71,44 @@
      // const secondCounter = func1;
 
     createCounter.lexicalEnvironment.localScoop = undefined;
+        if(!(some function has link to funcArgs2)) {
+            delete funcArgs1;
+        }
     */
 
     console.log(firstCounter());
     /*
     firstCounter.lexicalEnvironment = {
         globalScoop: funcArgs1,
-        localScoop: {}
+        localScoop: undefined
+    }
+    funcArgs1 = {
+        start: 10,
+        step: 2
     }
     funcArgs1.start += funcArgs1.step;
+        funcArgs1 = {
+        start: 12,
+        step: 2
+    }
     return funcArgs1.start;
     firstCounter.lexicalEnvironment.localScoop = undefined;
     */
 
     console.log(firstCounter());
+    /*
+    funcArgs1.start += funcArgs1.step;
+        funcArgs1 = {
+        start: 12,
+        step: 2
+    }
+    funcArgs1.start += funcArgs1.step;
 
+        funcArgs1 = {
+        start: 14,
+        step: 2
+    }
+    */
     console.log(secondCounter());
     
     console.log(secondCounter());
