@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    const createUser = function (name, lastName) {
+        /*
+        createCounter.lexicalEnvironment = {
+            globalScoop: Window,
+            localScoop: undefined
+        }
+        */
+        const newUser = {
+            name,
+            lastName,
+            getFullName(){
+                return `${this.name} ${this.lastName}`
+            }
+        };
+
+        return newUser;
+    };
+
+    const user1 = createUser("Андрей", "Первозванный");
+    /*
+    const funcArgs1 = {
+        name: "Андрей",
+        lastName: "Первозванный"
+    }
+
+    createUser.lexicalEnvironment.localScoop = funcArgs1;
+
+    const newUser = {
+            name: funcArgs1.name,
+            lastName: funcArgs1.name,
+            getFullName(){
+                return `${this.name} ${this.lastName}`
+            }
+        };
+        return newUser;
+     // const user1 = newUser;
+
+    createUser.lexicalEnvironment.localScoop = undefined;
+    */
+
+
+</script>
+</body>
+</html>

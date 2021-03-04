@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    const createCounter = function (start, step) {
+        /*
+        createCounter.lexicalEnvironment = {
+            globalScoop: Window,
+            localScoop: undefined
+        }
+        */
+        return function () {
+            start += step;
+            return start;
+        }
+    };
+
+    const firstCounter = createCounter(10, 2);
+    /*
+    const funcArgs1 = {
+        start: 10,
+        step: 2
+    }
+    
+    createCounter.lexicalEnvironment.localScoop = funcArgs1;
+    }
+
+    // создаем внутри анонимную функцию, пусть JS даст ей временное имя func1
+    function func1() {
+            // func1.lexicalEnvironment = {
+            //     globalScoop: createCounter.lexicalEnvironment.localScoop, // funcArgs1
+            //     localScoop: undefined
+            // }
+            start += step; // funcArgs1.start += funcArgs1.step;
+            return start; // return funcArgs1.start;
+        }
+
+    return func1;
+     // const firstCounter = func1;
+
+    createCounter.lexicalEnvironment.localScoop = undefined;
+    */
+ 
+    const secondCounter = createCounter(15, 5);
+    /*
+    const funcArgs2 = {
+        start: 15,
+        step: 5
+    }
+
+    createCounter.lexicalEnvironment.localScoop = funcArgs2;
+
+    // создаем внутри анонимную функцию, пусть JS даст ей временное имя func1
+    function func1() {
+            // func1.lexicalEnvironment = {
+            //     globalScoop: createCounter.lexicalEnvironment.localScoop, // funcArgs2
+            //     localScoop: undefined
+            // }
+            start += step; // funcArgs2.start += funcArgs2.step;
+            return start; // return funcArgs2.start;
+        }
+
+    return func1;
+     // const secondCounter = func1;
+
+    createCounter.lexicalEnvironment.localScoop = undefined;
+    */
+
+    console.log(firstCounter());
+    /*
+    firstCounter.lexicalEnvironment = {
+        globalScoop: funcArgs1,
+        localScoop: {}
+    }
+    funcArgs1.start += funcArgs1.step;
+    return funcArgs1.start;
+    firstCounter.lexicalEnvironment.localScoop = undefined;
+    */
+
+    console.log(firstCounter());
+
+    console.log(secondCounter());
+    
+    console.log(secondCounter());
+
+
+</script>
+</body>
+</html>
